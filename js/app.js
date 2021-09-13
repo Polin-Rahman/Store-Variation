@@ -12,8 +12,8 @@ const showProducts = (products) => {
   const allProducts = products.map((pd) => pd);
   for (const product of allProducts) {
     const image = product.image;
+
     const div = document.createElement("div");
-    const p = document.createElement("p");
     div.classList.add("product");
     div.innerHTML = `<div class="single-product">
       <div>
@@ -21,7 +21,7 @@ const showProducts = (products) => {
       </div>
       <h5>${product.title}</h5>
       <p>Category: ${product.category}</p>
-      <h5>Price: $ ${product.price}</h5>
+      <h4>Price: $ ${product.price}</h4>
       <i class="fas fa-star filled"></i>
       <i class="fas fa-star filled"></i>
       <i class="fas fa-star filled"></i>
@@ -66,7 +66,7 @@ const updatePrice = (id, value) => {
 
 // set innerText function
 const setInnerText = (id, value) => {
-  document.getElementById(id).innerText = value.toFixed(2);
+  document.getElementById(id).innerText = value;
 };
 
 // update delivery charge and total Tax
@@ -74,15 +74,15 @@ const updateTaxAndCharge = () => {
   const priceConverted = getInputValue("price");
   if (priceConverted > 200) {
     setInnerText("delivery-charge", 30);
-    setInnerText("total-tax", priceConverted * 0.2);
+    setInnerText("total-tax", (priceConverted * 0.2).toFixed(2));
   }
   if (priceConverted > 400) {
     setInnerText("delivery-charge", 50);
-    setInnerText("total-tax", priceConverted * 0.3);
+    setInnerText("total-tax", (priceConverted * 0.3).toFixed(2));
   }
   if (priceConverted > 500) {
     setInnerText("delivery-charge", 60);
-    setInnerText("total-tax", priceConverted * 0.4);
+    setInnerText("total-tax", (priceConverted * 0.4).toFixed(2));
   }
 };
 
@@ -96,5 +96,4 @@ const updateTotal = () => {
 };
 
 //load datd
-
 loadProducts();
