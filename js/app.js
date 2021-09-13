@@ -13,6 +13,7 @@ const showProducts = (products) => {
   for (const product of allProducts) {
     const image = product.image;
     const div = document.createElement("div");
+    const p = document.createElement("p");
     div.classList.add("product");
     div.innerHTML = `<div class="single-product">
       <div>
@@ -30,7 +31,7 @@ const showProducts = (products) => {
       <h6>Rating: <b>${product.rating.rate}</b></h6>
       <p>Rating count: <b>${product.rating.count}</b></p>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-outline-success">Add to cart</button>
-      <button id="details-btn" class="btn btn-outline-danger">Details</button>
+      <button id="details-btn" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
       </div>`;
     document.getElementById("all-products").appendChild(div);
   }
@@ -94,5 +95,6 @@ const updateTotal = () => {
   document.getElementById("total").innerText = grandTotal.toFixed(2);
 };
 
-//load data
+//load datd
+
 loadProducts();

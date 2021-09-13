@@ -47,6 +47,7 @@ body {
   height:500px;
   box-shadow: 2px 2px 4px gainsboro;
   border-radius: 10px;
+  background-image: linear-gradient(to bottom, white,rgba(220, 220, 220, 0.322)); 
 }
 .single-product:hover {
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.637);
@@ -71,6 +72,7 @@ body {
   border-radius: 5px;
   margin-right: 30px;
   position: fixed;
+  background-image: linear-gradient(to bottom, white,rgba(220, 220, 220, 0.322)); 
 }
 .cart-main {
   padding-right: 30px;
